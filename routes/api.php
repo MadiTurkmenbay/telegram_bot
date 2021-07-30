@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/telegram/bot', [BotController::class, 'bot']);
+Route::post('/telegram/bot', [BotController::class, 'bot']);
