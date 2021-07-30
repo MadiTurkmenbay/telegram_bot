@@ -24,17 +24,6 @@
       0 => 'Fruitcake\\Cors\\CorsServiceProvider',
     ),
   ),
-  'irazasyed/telegram-bot-sdk' => 
-  array (
-    'providers' => 
-    array (
-      0 => 'Telegram\\Bot\\Laravel\\TelegramServiceProvider',
-    ),
-    'aliases' => 
-    array (
-      'Telegram' => 'Telegram\\Bot\\Laravel\\Facades\\Telegram',
-    ),
-  ),
   'laravel/sail' => 
   array (
     'providers' => 
