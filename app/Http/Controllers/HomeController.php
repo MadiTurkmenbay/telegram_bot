@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\TelegramUser;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -29,7 +30,7 @@ class HomeController extends Controller
 
     public function users()
     {
-        $users = User::paginate(30);
+        $users = TelegramUser::paginate(30);
         return view('users.index',compact('users'));
     }
     public function telegram (){

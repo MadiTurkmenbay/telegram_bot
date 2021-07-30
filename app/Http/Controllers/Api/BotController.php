@@ -12,12 +12,11 @@ class BotController extends Controller
     public function bot(Request $request)
     {
 //        $telegram = new Api('1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc');
-
-
-        $updarray = $request;
+//        dd($request);
+        $log = file_get_contents('https://api.telegram.org/bot1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc/sendMessage?chat_id=642295472&parse_mode=html&text=ҚҰТТЫҚТАЙМЫН');
         $token = '1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc';
         $website = "https://api.telegram.org/bot" . $token;
-        $upd = file_get_contents("php://input");
+        $updarray = $request;
 
         if ($updarray['callback_query'] != 0) {
             $data = $updarray['callback_query']['data'];
@@ -71,10 +70,8 @@ class BotController extends Controller
             $reply = "🥳ҚҰТТЫҚТАЙМЫН %0A%0AТабысқа жетуге бір қадам жақындадыңыз! Тегін онлайн вебинарға өз орныңызды алып үлгердіңіз! %0A%0AСізге УӘДЕ еткен сыйлығым🎁👇%0A%0A📥Вебинар эфирінін сілтемесін сізге SMS-пен жіберемін";
 
             $textmes = $website . $sendmes . $reply;
-            $textmes2 = $website . $senddoc . 'https://ust.kz/frontend/web/telegrambot/maditelegram/files/CHECKLIST.pdf';
 
             $log = file_get_contents($textmes);
-            $log = file_get_contents($textmes2);
         }
         else if ($data == '/i_ready') {
             $reply = "https://start.bizon365.ru/room/88694/botakoniratbekkyzy";
