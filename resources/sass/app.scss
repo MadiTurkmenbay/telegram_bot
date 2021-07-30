@@ -1,0 +1,23 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+
+.title{
+    font-size: 22px;
+    text-transform: uppercase;
+    padding: 0px;
+    margin: 0px;
+    font-weight: bold;
+    text-align: center;
+}
+.link_title{
+    &:hover{
+        text-decoration: none;
+    }
+}
