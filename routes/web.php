@@ -24,6 +24,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/users', [HomeController::class, 'users'])->name('users.index');
 Route::get('/telegram', [HomeController::class, 'telegram'])->name('telegram');
 Route::get('/telegram/sending', [HomeController::class, 'sending'])->name('sending');
-Route::get('/telegram/bot', [BotController::class, 'bot']);
+
 
 
