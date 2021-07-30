@@ -12,8 +12,8 @@ class BotController extends Controller
     {
 //        $telegram = new Api('1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc');
 //        dd($request);
-        $log = file_get_contents('https://api.telegram.org/bot1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc/sendMessage?chat_id=642295472&parse_mode=html&text=ҚҰТТЫҚТАЙМЫН');
-        dd($log);
+//        $log = file_get_contents('https://api.telegram.org/bot1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc/sendMessage?chat_id=642295472&parse_mode=html&text=ҚҰТТЫҚТАЙМЫН');
+//        dd($log);
         $token = '1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc';
         $website = "https://api.telegram.org/bot" . $token;
         $updarray = $request;
