@@ -13,7 +13,9 @@
         "guzzlehttp/psr7": "1.*",
         "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",
-        "laravel/ui": "^3.3"
+        "laravel/ui": "^3.3",
+        "longman/telegram-bot": "^0.74.0",
+        "ext-mysqli": "*"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
