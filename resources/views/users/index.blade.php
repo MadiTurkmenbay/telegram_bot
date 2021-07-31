@@ -1,5 +1,4 @@
 @extends('layouts.app')
-@section('title', 'Админ панель - пользователи')
 
 @section('content')
     <!-- Content Header (Page header) -->
@@ -32,16 +31,13 @@
                                 Имя
                             </th>
                             <th>
-                                Номер
+                                Фамилия
                             </th>
                             <th>
-                                Email
+                                Логин
                             </th>
                             <th>
-                                Пароль
-                            </th>
-                            <th>
-                                Права
+                                Чат ID
                             </th>
                         </tr>
                         </thead>
@@ -53,16 +49,16 @@
                                            value="{{request()->input('id') }}" placeholder="">
                                 </td>
                                 <td>
-                                    <input name="name" class="form-control" type="text"
-                                           value="{{request()->input('name') }}" placeholder="">
+                                    <input name="first_name" class="form-control" type="text"
+                                           value="{{request()->input('first_name') }}" placeholder="">
                                 </td>
                                 <td>
-                                    <input name="phone" class="form-control"  type="text"
-                                           value="{{request()->input('phone') }}" placeholder="">
+                                    <input name="username" class="form-control"  type="text"
+                                           value="{{request()->input('username') }}" placeholder="">
                                 </td>
                                 <td>
-                                    <input name="email" class="form-control" type="text"
-                                           value="{{request()->input('email') }}" placeholder="">
+                                    <input name="chat_id" class="form-control" type="text"
+                                           value="{{request()->input('chat_id') }}" placeholder="">
                                 </td>
                                 <td>
                                     <input name="password" class="form-control" type="text"
@@ -82,22 +78,18 @@
                                     {{ $user['id'] }}
                                 </td>
                                 <td>
-                                    {{ $user['name'] }}
+                                    {{ $user['first_name'] }}
                                 </td>
                                 <td style="white-space: nowrap">
-                                    {{ $user['phone'] }}
+                                    {{ $user['last_name'] }}
                                 </td>
                                 <td>
-                                    {{ $user['email'] }}
+                                    {{ $user['username'] }}
                                 </td>
                                 <td>
-                                    {{ $user['password'] }}
-                                </td>
-                                <td>
-
+                                    {{ $user['chat_id'] }}
                                 </td>
                                 <td class="project-actions text-right">
-
 {{--                                    @if ($user['role_id'] == 1)--}}
 {{--                                        <a class="w-100 btn btn-warning btn-sm edit mb-1" href="{{ route('user.edit', $user->id) }}">--}}
 {{--                                            <i class="fas fa-user">--}}

@@ -23,7 +23,8 @@ Auth::routes();
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/users', [HomeController::class, 'users'])->name('users.index');
 Route::get('/telegram', [HomeController::class, 'telegram'])->name('telegram');
-Route::get('/telegram/sending', [HomeController::class, 'sending'])->name('sending');
+Route::post('/save_texts', [HomeController::class, 'save_texts'])->name('save_texts');
+Route::GET('/get_chats', [HomeController::class, 'get_chats'])->name('get_chats');
 
 
 
