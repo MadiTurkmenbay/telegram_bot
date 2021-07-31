@@ -12,7 +12,7 @@ class BotController extends Controller
     {
         $token = '1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc';
         $website = "https://api.telegram.org/bot" . $token;
-        $content = $request->all();
+        $content = $request->getContent();
         $updarray = json_decode($content, true);;
         if ($updarray['callback_query'] != 0) {
             $log = file_get_contents('https://api.telegram.org/bot1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc/sendMessage?chat_id=642295472&parse_mode=html&text=OKKKKKKK');
@@ -27,6 +27,7 @@ class BotController extends Controller
             $last_name = str_replace("'", "", $last_name);
             $username = str_replace("'", "", $username);
         } else {
+            $log = file_get_contents('https://api.telegram.org/bot1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc/sendMessage?chat_id=642295472&parse_mode=html&text=OKKKKKKK');
             $text = $updarray['message']['text'];
             $chatId = $updarray['message']['chat']['id'];
             $messageid = $updarray['message']['message_id'];
@@ -75,6 +76,7 @@ class BotController extends Controller
             $textmes = $website . $sendmes . $reply;
             $log = file_get_contents($textmes);
         }
+        return 1;
     }
 
 }
