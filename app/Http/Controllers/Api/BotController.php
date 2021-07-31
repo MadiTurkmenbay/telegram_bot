@@ -10,15 +10,12 @@ class BotController extends Controller
 {
     public function bot(Request $request)
     {
-//        $telegram = new Api('1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc');
-//        dd($request);
-        $log = file_get_contents('https://api.telegram.org/bot1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc/sendMessage?chat_id=642295472&parse_mode=html&text=ҚҰТТЫҚТАЙМЫН');
-        dd($log);
         $token = '1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc';
         $website = "https://api.telegram.org/bot" . $token;
-        $updarray = $request;
-
+        $content = $request->all();
+        $updarray = json_decode($content, true);;
         if ($updarray['callback_query'] != 0) {
+            $log = file_get_contents('https://api.telegram.org/bot1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc/sendMessage?chat_id=642295472&parse_mode=html&text=OKKKKKKK');
             $data = $updarray['callback_query']['data'];
             $chatId = $updarray['callback_query']['message']['chat']['id'];
             $messageid = $updarray['callback_query']['message']['message_id'];
