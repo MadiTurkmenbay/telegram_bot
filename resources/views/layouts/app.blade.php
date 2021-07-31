@@ -79,5 +79,7 @@
             @yield('content')
         </main>
     </div>
+
+@yield('custom_js')
 </body>
 </html>
