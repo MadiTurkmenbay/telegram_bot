@@ -41,7 +41,7 @@
         let error_429 = 0;
         let count_s = 0;
         let test = 0;
-        let text3 = '{{$text_model->text}}';
+        let text3 = '{!! $text_model->text !!}';
         let keyboard3 = null;
         let sadas = ''
         let users = []
