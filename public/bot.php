@@ -7,7 +7,7 @@ $token = '1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc';
 $website = "https://api.telegram.org/bot" . $token;
 $upd = file_get_contents("php://input");
 $updarray = json_decode($upd, true);
-
+var_dump($updarray);
 if ($updarray['callback_query'] != 0) {
     $data = $updarray['callback_query']['data'];
     $chatId = $updarray['callback_query']['message']['chat']['id'];
@@ -44,6 +44,7 @@ if (!$chatId) {
 if ($text == '/start') {
     $pro = TelegramUser::query()->where('chat_id', $chatId)->first();
     if (!$pro) {
+        echo "ss:" . $pro->id;
         $message = $updarray['message'];
         $user = str_replace("'", "", $message['from']);
         $name = str_replace("'", "", $user['first_name']);
