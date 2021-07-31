@@ -68,7 +68,16 @@ if ($text == '/start') {
     $log = file_get_contents($textmes2);
 
     return 1;
-} else if ($data == '/i_ready') {
+}
+else if($text == "dana_eblan"){
+    $reply = "Ты прав бро";
+
+    $textmes = $website . $sendmes . $reply;
+
+    $log = file_get_contents($textmes);
+    return 1;
+}
+else if ($data == '/i_ready') {
     $reply = "https://start.bizon365.ru/room/88694/botakoniratbekkyzy";
     $textmes = $website . $sendmes . $reply;
     $log = file_get_contents($textmes);
