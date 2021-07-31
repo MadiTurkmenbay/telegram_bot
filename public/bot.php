@@ -1,7 +1,7 @@
 <?php
 $log = file_get_contents('https://api.telegram.org/bot1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc/sendMessage?chat_id=642295472&parse_mode=html&text=ҚҰТТssssЫҚТАЙМЫН');
 
-
+return 1;
 use App\Models\TelegramUser;
 
 
@@ -15,27 +15,27 @@ $user->save();
 
 $token = '1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc';
 $website = "https://api.telegram.org/bot" . $token;
-$upd = file_get_contents("php://input");
-$updarray = json_decode($upd, true);
+$content = file_get_contents("php://input");
+$update = json_decode($content, true);
 
-if ($updarray['callback_query'] != 0) {
-    $data = $updarray['callback_query']['data'];
-    $chatId = $updarray['callback_query']['message']['chat']['id'];
-    $messageid = $updarray['callback_query']['message']['message_id'];
-    $callback_query_id = $updarray['callback_query']['id'];
-    $first_name = $updarray['callback_query']['message']['from']['first_name'];
-    $last_name = $updarray['callback_query']['message']['from']['last_name'];
-    $username = $updarray['callback_query']['message']['from']['username'];
+if ($update['callback_query'] != 0) {
+    $data = $update['callback_query']['data'];
+    $chatId = $update['callback_query']['message']['chat']['id'];
+    $messageid = $update['callback_query']['message']['message_id'];
+    $callback_query_id = $update['callback_query']['id'];
+    $first_name = $update['callback_query']['message']['from']['first_name'];
+    $last_name = $update['callback_query']['message']['from']['last_name'];
+    $username = $update['callback_query']['message']['from']['username'];
     $first_name = str_replace("'", "", $first_name);
     $last_name = str_replace("'", "", $last_name);
     $username = str_replace("'", "", $username);
 } else {
-    $text = $updarray['message']['text'];
-    $chatId = $updarray['message']['chat']['id'];
-    $messageid = $updarray['message']['message_id'];
-    $first_name = $updarray['message']['from']['first_name'];
-    $last_name = $updarray['message']['from']['last_name'];
-    $username = $updarray['message']['from']['username'];
+    $text = $update['message']['text'];
+    $chatId = $update['message']['chat']['id'];
+    $messageid = $update['message']['message_id'];
+    $first_name = $update['message']['from']['first_name'];
+    $last_name = $update['message']['from']['last_name'];
+    $username = $update['message']['from']['username'];
     $first_name = str_replace("'", "", $first_name);
     $last_name = str_replace("'", "", $last_name);
     $username = str_replace("'", "", $username);
@@ -55,7 +55,7 @@ if ($text == '/start') {
     $log = file_get_contents('https://api.telegram.org/bot1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc/sendMessage?chat_id=642295472&parse_mode=html&text=ҚaaaaaaaТАЙМЫН');
     $pro = TelegramUser::query()->where('chat_id', $chatId)->first();
     if (!$pro) {
-        $message = $updarray['message'];
+        $message = $update['message'];
         $user = str_replace("'", "", $message['from']);
         $name = str_replace("'", "", $user['first_name']);
         $surename = str_replace("'", "", $user['last_name']);
