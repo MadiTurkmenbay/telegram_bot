@@ -78,3 +78,4 @@ if ($text == '/start') {
     $textmes = $website . $sendmes . $reply;
     $log = file_get_contents($textmes);
 }
+return true;
