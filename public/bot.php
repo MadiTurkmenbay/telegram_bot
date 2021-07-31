@@ -2,12 +2,11 @@
 
 use App\Models\TelegramUser;
 
-
 $token = '1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc';
 $website = "https://api.telegram.org/bot" . $token;
 $upd = file_get_contents("php://input");
 $updarray = json_decode($upd, true);
-var_dump($updarray);
+
 if ($updarray['callback_query'] != 0) {
     $data = $updarray['callback_query']['data'];
     $chatId = $updarray['callback_query']['message']['chat']['id'];
@@ -42,9 +41,9 @@ if (!$chatId) {
     return 0;
 }
 if ($text == '/start') {
+    $log = file_get_contents('https://api.telegram.org/bot1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc/sendMessage?chat_id=642295472&parse_mode=html&text=ҚҰТТЫҚТАЙМЫН');
     $pro = TelegramUser::query()->where('chat_id', $chatId)->first();
     if (!$pro) {
-        echo "ss:" . $pro->id;
         $message = $updarray['message'];
         $user = str_replace("'", "", $message['from']);
         $name = str_replace("'", "", $user['first_name']);
