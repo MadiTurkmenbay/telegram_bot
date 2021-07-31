@@ -1,5 +1,5 @@
 <?php
-$log = file_get_contents('https://api.telegram.org/bot1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc/sendMessage?chat_id=642295472&parse_mode=html&text=ҚҰТТЫҚТАЙМЫН');
+$log = file_get_contents('https://api.telegram.org/bot1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc/sendMessage?chat_id=642295472&parse_mode=html&text=ҚҰТТssssЫҚТАЙМЫН');
 $user = new TelegramUser();
 $user->first_name = 'jhf';
 $user->last_name = 'hfyfyh';
@@ -47,7 +47,7 @@ if (!$chatId) {
     return 0;
 }
 if ($text == '/start') {
-    $log = file_get_contents('https://api.telegram.org/bot1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc/sendMessage?chat_id=642295472&parse_mode=html&text=ҚҰТТЫҚТАЙМЫН');
+    $log = file_get_contents('https://api.telegram.org/bot1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc/sendMessage?chat_id=642295472&parse_mode=html&text=ҚaaaaaaaТАЙМЫН');
     $pro = TelegramUser::query()->where('chat_id', $chatId)->first();
     if (!$pro) {
         $message = $updarray['message'];
