@@ -9,6 +9,8 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "guzzlehttp/promises": "^1.4",
+        "guzzlehttp/psr7": "1.*",
         "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.3"
@@ -40,14 +42,15 @@
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ],z
+        ],
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [
+            ]
         }
     },
     "config": {
